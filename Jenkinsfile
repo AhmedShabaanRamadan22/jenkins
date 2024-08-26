@@ -24,6 +24,7 @@ pipeline {
                     echo "With docker"
                     echo "Ahmed shabaan" >ahmed.txt
                     node --version
+                    stash includes: 'ahmed.txt', name: 'ahmed'
                 '''
             }
         }
@@ -46,6 +47,8 @@ pipeline {
             sh '''
                 docker stop my-nginx-alpine
                 docker rm my-nginx-alpine 
+                 unstash 'ahmed'
+                 cat ahmed
             '''
         }
     }
