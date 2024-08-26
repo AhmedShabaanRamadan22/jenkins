@@ -49,7 +49,7 @@ pipeline {
                 docker stop my-nginx-alpine
                 docker rm my-nginx-alpine 
                 unstash 'myname-file'
-                cat myname-file
+                cat ahmed
             '''
         }
     }
