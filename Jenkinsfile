@@ -45,10 +45,11 @@ pipeline {
 
     post {
         always {
+            unstash 'myname-file'
+
             sh '''
                 docker stop my-nginx-alpine
                 docker rm my-nginx-alpine 
-                unstash 'myname-file'
                 cat ahmed
             '''
         }
