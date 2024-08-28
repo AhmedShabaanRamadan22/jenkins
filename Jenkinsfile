@@ -24,7 +24,7 @@ pipeline {
                     echo "With docker"
                     echo "Ahmed shabaan" > ahmed.txt
                     node --version 
-                    sleep 40
+                    sleep 240
 
                 '''
                 stash name: 'myname-file', includes: 'ahmed.txt'
@@ -37,7 +37,7 @@ pipeline {
                 sh '''
                     docker run -d \
                     --name my-nginx-alpine \
-                    -p 7000:80 \
+                    -p 4000:80 \
                     nginx:alpine
                 '''
             }
