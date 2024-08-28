@@ -23,7 +23,9 @@ pipeline {
                 sh '''
                     echo "With docker"
                     echo "Ahmed shabaan" > ahmed.txt
-                    node --version
+                    node --version 
+                    sleep 40
+
                 '''
                 stash name: 'myname-file', includes: 'ahmed.txt'
             }
