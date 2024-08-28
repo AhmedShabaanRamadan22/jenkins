@@ -35,7 +35,7 @@ pipeline {
                 sh '''
                     docker run -d \
                     --name my-nginx-alpine \
-                    -p 6000:80 \
+                    -p 7000:80 \
                     nginx:alpine
                 '''
             }
